@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+      {% load static %}
+    <script src="{% static "OCR_Translator/index_js.js"%}"></script>
+
+
+    <title>OCR</title>
+    <h1>Sign Board Translator</h1>
+</head>
+<body>
+    <form>
+        <input type='file' onchange="readURL(this);" />
+        <img id="ocr">
+        <input type="submit" value="Translate">
+    </form>
+
+</body>
+</html>
