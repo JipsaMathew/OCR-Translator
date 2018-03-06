@@ -2,7 +2,6 @@ import io
 import os
 from google.cloud import vision
 from google.cloud.vision import types
-# from google.cloud import storage
 from google.cloud import translate
 
 
@@ -11,11 +10,12 @@ class Service:
     ] = r'C:\Users\Jipsa\Documents\UTTyler-Spring 2018\COSC 5399\api_key.json'
 
 
-def detect_text():
+def detect_text(path):
     """vision api text detection feature"""
 
     vision_client = vision.ImageAnnotatorClient()
-    file_name = r'C:\Users\Jipsa\Documents\UTTyler-Spring 2018\COSC 5399\cosc5399\OCR_Translator\atlanta.jpg'
+    # file_name = r'C:\Users\Jipsa\Documents\UTTyler-Spring 2018\COSC 5399\cosc5399\OCR_Translator\atlanta.jpg'
+    file_name = path
     with io.open(file_name,
                  'rb') as image_file:
         content = image_file.read()
@@ -31,13 +31,17 @@ def detect_text():
 
 # Translate api
 
+def translate_text(msg, lang):
+    # Instantiates a client
+    translate_client = translate.Client()
+    text = msg
+    # The target language
+    target = lang
 
-def main():
-    """main method for service class"""
+    # Translates some text into target
+    result = translate_client.translate(
+        text,
+        target_language=target)
 
-    msg = detect_text()  # detected text from the image
-    print(msg)
-
-
-# calling main method
-main()
+    #print(u'Text: {}'.format(text))
+    return result['translatedText']
