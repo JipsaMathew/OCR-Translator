@@ -12,8 +12,8 @@
     <h1>Sign Board Translator</h1>
 </head>
 <body>
-    <form>
-        <input type='file' onchange="readURL(this);" />
+    <form method="post" enctype="multipart/form-data">
+        <input type='file' name= 'image' onchange="readURL(this);" />
         <img id="ocr">
         <input type="submit" value="Translate">
     </form>
