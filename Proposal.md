@@ -1,4 +1,4 @@
-:# Optical Character Recognizer (OCR) and Translator
+# Optical Character Recognizer (OCR) and Translator
 
 # Overview
 This project implements an Optical Character Recognizer (OCR) and Translator which recognizes words in an image and translates it to desired language. This project is being developed as required by COSC 5399.
