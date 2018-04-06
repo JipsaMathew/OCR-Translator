@@ -6,10 +6,12 @@ from google.cloud import translate
 
 
 class Service:
+    #api keys for accessing GCP
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"
     ] = r'C:\Users\Jipsa\Documents\UTTyler-Spring 2018\COSC 5399\api_key.json'
 
 
+#ocr detection
 def detect_text(path):
     """vision api text detection feature"""
 
@@ -29,7 +31,7 @@ def detect_text(path):
         return text.description
 
 
-# Translate api
+# Translate method
 
 def translate_text(msg, lang):
     # Instantiates a client
@@ -45,3 +47,4 @@ def translate_text(msg, lang):
 
     #print(u'Text: {}'.format(text))
     return result['translatedText']
+
